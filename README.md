@@ -37,9 +37,15 @@ git clone https://github.com/AaravTheGreatest/rasterizer.git
 
 Build:  
 
+To build a specific example (`cat rasterizer/examples` to see all examples):  
+
 ```bash
-cd rasterizer && make
+cd rasterizer && make example EXAMPLE=name
 ```
+
+For example, `make example EXAMPLE=rect` would build examples/rect.cpp
+
+`make example` defaults to rect.cpp
 
 Run:  
 
