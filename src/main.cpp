@@ -92,6 +92,7 @@ int main() {
     }
     framebuffer.clear(0xFF000000);
     drawTriangle(framebuffer, 100, 100, 200, 10, 200, 100, true, 0xFFFFFFFF);
+    drawTriangle(framebuffer, 100, 100, 100, 10, 200, 10, true, 0xFF0000FF);
     updateScreen(display, window, image, framebuffer);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000/fps));
   }
