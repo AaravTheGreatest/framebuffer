@@ -11,3 +11,8 @@ EXAMPLE ?= rect
 
 example:
 	$(CXX) -o build/$(EXAMPLE) examples/$(EXAMPLE).cpp $(SRC) $(CXXFLAGS) $(LDLIBS)
+
+clean:
+	rm -rf build/*
+
+.PHONY: all example clean
