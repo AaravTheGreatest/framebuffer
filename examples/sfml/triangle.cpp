@@ -25,8 +25,9 @@ int main() {
         if (key->code == sf::Keyboard::Key::Escape || key->code == sf::Keyboard::Key::Q) window.close();
       }
     }
-    framebuffer.clear(Colors::Black.pack());
-    drawTriangle(framebuffer, 100, 100, 200, 10, 200, 100, true, Colors::Green.pack());
+    framebuffer.clear(Colors::Black);
+    drawLine(framebuffer, raster::Vec2f(400, 30), raster::Vec2f(500, 80), Color(1, 1, 1));
+    drawTriangle(framebuffer, 100, 100, 200, 10, 200, 100, true, Colors::Green);
     texture.update(reinterpret_cast<const uint8_t*>(framebuffer.data()));
     window.clear();
     window.draw(sprite);

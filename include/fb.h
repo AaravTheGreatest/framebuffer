@@ -1,12 +1,15 @@
 #pragma once
+
+#include <colors.h>
+
 #include <vector>
 #include <cstdint>
 
 class Framebuffer {
 public:
   Framebuffer(uint32_t w, uint32_t h);
-  void clear(uint32_t colour);
-  void setPixel(uint32_t x, uint32_t y, uint32_t c);
+  void clear(Color color);
+  void setPixel(uint32_t x, uint32_t y, Color color);
   uint32_t* data();
   uint32_t getWidth() const;
   uint32_t getHeight() const;

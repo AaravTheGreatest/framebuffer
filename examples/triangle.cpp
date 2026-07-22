@@ -90,8 +90,8 @@ int main() {
         }
       }
     }
-    framebuffer.clear(0xFF000000);
-    drawTriangle(framebuffer, 100, 100, 200, 10, 200, 100, true, 0xFFFFFFFF);
+    framebuffer.clear(Colors::Black);
+    drawTriangle(framebuffer, 100, 100, 200, 10, 200, 100, true, Colors::White);
     updateScreen(display, window, image, framebuffer);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000/fps));
   }

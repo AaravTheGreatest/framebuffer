@@ -13,10 +13,10 @@ void Framebuffer::setWidth(uint32_t w) { width = w; pixels.resize(width * height
 void Framebuffer::setHeight(uint32_t h) {height = h; pixels.resize(width * height); }
 
 // coloring stuff
-void Framebuffer::clear(uint32_t colour) { 
-  for (size_t i = 0; i < pixels.size(); i++) pixels[i] = colour; 
+void Framebuffer::clear(Color color) { 
+  for (size_t i = 0; i < pixels.size(); i++) pixels[i] = color.pack(); 
 } 
-void Framebuffer::setPixel(uint32_t x, uint32_t y, uint32_t colour) { 
+void Framebuffer::setPixel(uint32_t x, uint32_t y, Color color) { 
   if (x >= width || y >= height) return; 
-  pixels[y * getWidth() + x] = colour; 
+  pixels[y * getWidth() + x] = color.pack(); 
 }

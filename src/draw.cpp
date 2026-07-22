@@ -6,8 +6,8 @@
 int edge(int x1, int y1, int x2, int y2, int x3, int y3) {
     return (x3 - x1) * (y2 - y1) - (y3 - y1) * (x2 - x1);
 }
-
-int drawLine(Framebuffer& fb, int x1, int y1, int x2, int y2, uint32_t color) {
+int drawLine(Framebuffer& fb, raster::Vec2f a, raster::Vec2f b, Color color) {
+  int x1 = a.x, x2 = b.x, y1 = a.y, y2 = b.y;
   int dx = (x2 - x1), dy = (y2 - y1);
   if (dx == 0 && dy == 0) {
     fb.setPixel(x1, y1, color);
@@ -23,7 +23,11 @@ int drawLine(Framebuffer& fb, int x1, int y1, int x2, int y2, uint32_t color) {
   }
   return 0;
 }
-int drawTriangle(Framebuffer& fb, int x1, int y1, int x2, int y2, int x3, int y3, bool filled, uint32_t color) {
+int drawLine(Framebuffer& fb, int x1, int y1, int x2, int y2, Color color) {
+  return drawLine(fb, raster::Vec2f(x1, y1), raster::Vec2f(x2, y2), color);
+
+}
+int drawTriangle(Framebuffer& fb, int x1, int y1, int x2, int y2, int x3, int y3, bool filled, Color color) {
   drawLine(fb, x1, y1, x2, y2, color); drawLine(fb, x2, y2, x3, y3, color); drawLine(fb, x3, y3, x1, y1, color);
   if (filled) {
     int xMin = std::min(x1, std::min(x2, x3)), xMax = std::max(x1, std::max(x2, x3)),
