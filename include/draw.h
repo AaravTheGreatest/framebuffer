@@ -7,6 +7,6 @@
 #include <vector>
 
 int drawLine(Framebuffer& fb, const Vertex& a, const Vertex& b);
-int drawTriangle(Framebuffer& fb, const Vertex& a, const Vertex& b, const Vertex c, bool filled, Color color);
+int drawTriangle(Framebuffer& fb, const Vertex& a, const Vertex& b, const Vertex& c, bool filled);
 
 

@@ -15,6 +15,7 @@ namespace raster {
     Vec4<T> operator-(const Vec4<T>& other) const;
     Vec4<T> operator*(const Vec4<T>& other) const;
     Vec4<T> operator*(T s) const;
+    Vec4<T> operator+=(const Vec4<T>& other) const;
   };
   template<typename T>
   Vec4<T>::Vec4(): x(0), y(0), z(0), w(1) {}
@@ -34,4 +35,6 @@ namespace raster {
   Vec4<T> Vec4<T>::operator*(const Vec4<T>& other) const { return Vec4(x * other.x, y * other.y, z * other.z, w * other.w); }
   template <typename T>
   Vec4<T> Vec4<T>::operator*(T s) const { return Vec4<T>(x * s, y * s, z * s, w * s); }
+  template <typename T>
+  Vec4<T> Vec4<T>::operator+=(const Vec4<T>& other) const { return this + other; }
 }
